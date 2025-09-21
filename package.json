@@ -1,0 +1,26 @@
+{
+  "name": "http-api-assignment",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "pretest": "eslint .",
+    "test": "npm run pretest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ethan-Shek/http-api-assignment.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ethan-Shek/http-api-assignment/issues"
+  },
+  "homepage": "https://github.com/Ethan-Shek/http-api-assignment#readme",
+  "devDependencies": {
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-plugin-import": "^2.32.0"
+  }
+}
