@@ -3,10 +3,6 @@
 <head>
   <title>Our simple HTTP server</title>
   <link rel="stylesheet" type="text/css" href="/style.css">
-  
-  <script>
-
-  </script>
 </head>
 <body>
   <section id="top">
@@ -26,7 +22,33 @@
     </select>
     <button id="send">Send</button>
   </section>
+
   <section id="content">
   </section>
+
+  <script>
+    const sendButton = document.getElementById('send');
+
+    const sendRequest = async () => {
+      const page = document.getElementById('page').value;
+      const type = document.getElementById('type').value;
+
+      try {
+        const response = await fetch(page, {
+          headers: { 'Accept': type },
+        });
+
+        const content = document.getElementById('content');
+        content.innerHTML = `<p>Status: ${response.status}</p>`;
+
+        const text = await response.text();
+        content.innerHTML += `<pre>${text}</pre>`;
+      } catch (err) {
+        console.error(err);
+      }
+    };
+
+    sendButton.addEventListener('click', sendRequest);
+  </script>
 </body>
 </html>
